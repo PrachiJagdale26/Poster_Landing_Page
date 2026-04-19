@@ -61,8 +61,8 @@ const DataVisualization = () => {
     datasets: [{
       label: 'Engagement Rate',
       fill: true,
-      data: [120, 190, 250, 310, 480, 520, 680, 890, 1100, 1450, 1800, 2400],
-      borderColor: '#ec4899', // brand-pink
+      data: [120, 290, 150, 310, 880, 520, 680, 1590, 1100, 1450, 1200, 2100], // Spiky realistic pattern
+      borderColor: '#ec4899', 
       backgroundColor: 'rgba(236, 72, 153, 0.1)',
       borderWidth: 3
     }]
@@ -78,22 +78,27 @@ const DataVisualization = () => {
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem', transform: 'translateZ(20px)' }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Growth Trajectory</h2>
-            <p style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Hover to view pinpoint interaction data.</p>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Engagement Value Index</h2>
+            <p style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Engagement value fluctuates based on activity, visibility, and audience interaction.</p>
+            <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontWeight: 600, color: 'var(--brand-blue)' }}>X-Axis: Time | Y-Axis: System Value Index</div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.25rem', opacity: 0.8 }}>Annual Performance</div>
-            <div className="text-gradient primary-focal-glow" style={{ fontSize: '2rem', fontWeight: 800 }}>+1,900%</div>
+            <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '0.25rem', opacity: 0.8 }}>Index Fluctuation</div>
+            <div className="text-gradient primary-focal-glow" style={{ fontSize: '2rem', fontWeight: 800 }}>Varying</div>
           </div>
         </div>
 
         {/* Enhanced Interactive Hover Graph */}
         <div 
           className="glass-panel hover-3d" 
-          style={{ height: '500px', width: '100%', padding: '2rem', background: 'rgba(255, 255, 255, 0.4)' }}
+          style={{ position: 'relative', height: '500px', width: '100%', padding: '2rem', background: 'rgba(255, 255, 255, 0.4)' }}
           onMouseEnter={(e) => { e.currentTarget.classList.add('primary-focal-glow'); }}
           onMouseLeave={(e) => { e.currentTarget.classList.remove('primary-focal-glow'); }}
         >
+          {/* Annotations */}
+          <div style={{ position: 'absolute', top: '25%', left: '42%', background: 'var(--surface-color)', padding: '0.35rem 0.75rem', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', border: '1px solid var(--surface-border)', zIndex: 20 }}>Spike: High Engagement Content</div>
+          <div style={{ position: 'absolute', bottom: '25%', left: '18%', background: 'var(--surface-color)', padding: '0.35rem 0.75rem', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', border: '1px solid var(--surface-border)', zIndex: 20 }}>Drop: Reduced Activity</div>
+          
           <Line data={lineData} options={chartOptions} />
         </div>
 

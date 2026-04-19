@@ -6,9 +6,9 @@ const SocialValidation = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   const reviews = [
-    { name: 'Sarah J.', role: 'Brand Partner', text: 'Incredible conversion rates. The engagement quality is industry-leading.', score: 5 },
-    { name: 'Michael T.', role: 'Agency Director', text: 'A highly trusted profile that guarantees ROI on every collaboration.', score: 5 },
-    { name: 'Elena V.', role: 'Founder', text: 'Visibility translates directly to revenue. A powerful digital asset.', score: 5 }
+    { name: 'Average Rating Score', role: 'Quantified Validation', text: 'Validation Score: 4.8 / 5', score: 5 },
+    { name: 'Engagement Ratio', role: 'Relative Participation', text: 'Engagement Efficiency: High', score: 5 },
+    { name: 'Derived Trust Index', role: 'Audience Consensus', text: 'Audience Trust Index: Stable', score: 5 }
   ];
 
   return (
@@ -19,11 +19,11 @@ const SocialValidation = () => {
       >
         <div className="floating" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(236, 72, 153, 0.1)', padding: '0.5rem 1rem', borderRadius: '50px', color: 'var(--brand-pink)', fontWeight: 600, marginBottom: '1rem' }}>
           <ShieldCheck size={18} />
-          <span>Verified Influence</span>
+          <span>Measured Validation</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem' }}>Social Validation is Currency</h2>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem' }}>Structured Validation Metrics</h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6, opacity: 0.8 }}>
-          Likes and comments are not vanity metrics; they are consensus algorithms proving trust, credibility, and market demand.
+          Social validation is quantified through interaction patterns and audience response consistency.
         </p>
       </div>
 
@@ -49,7 +49,7 @@ const SocialValidation = () => {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: '1.1rem', lineHeight: 1.6, flex: 1, color: 'var(--text-secondary)' }}>"{review.text}"</p>
+            <p style={{ fontSize: '1.2rem', fontWeight: 600, lineHeight: 1.6, flex: 1, color: 'var(--text-primary)' }}>{review.text}</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
               <div 
                 className="extruded-icon"

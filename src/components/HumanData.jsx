@@ -18,20 +18,20 @@ const HumanData = () => {
             style={{ width: '100%', maxWidth: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '3rem', zIndex: 10, transformStyle: 'preserve-3d' }}
           >
             <UserCircle2 size={120} strokeWidth={1} style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', transform: 'translateZ(40px)' }} />
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', transform: 'translateZ(30px)' }}>Digital Identity</h3>
-            <div style={{ color: 'var(--brand-orange)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '2px', transform: 'translateZ(30px)' }}>AUTHORITY: HIGH</div>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', transform: 'translateZ(30px)' }}>Digital Identity Matrix</h3>
+            <div style={{ color: 'var(--brand-orange)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '2rem', letterSpacing: '2px', transform: 'translateZ(30px)' }}>COMPUTED INFLUENCE</div>
             
             <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem', transform: 'translateZ(20px)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--surface-border)', paddingBottom: '0.5rem' }}>
-                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Network Size</span>
-                <strong className="text-gradient primary-focal-glow" style={{ fontSize: '1.2rem', fontWeight: 800 }}>4.2M+</strong>
+                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Influence Score</span>
+                <strong className="text-gradient primary-focal-glow" style={{ fontSize: '1.2rem', fontWeight: 800 }}>82 / 100</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--surface-border)', paddingBottom: '0.5rem' }}>
-                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Engagement Rate</span>
-                <strong style={{ fontSize: '1.2rem', fontWeight: 800, color: '#fff' }}>18.4%</strong>
+                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Consistency</span>
+                <strong style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-primary)' }}>Moderate</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Conversion</span>
+                <span style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>Conversion Efficiency</span>
                 <strong style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--brand-green)' }}>6.2%</strong>
               </div>
             </div>
@@ -44,13 +44,13 @@ const HumanData = () => {
           style={{ paddingLeft: '4rem', zIndex: 10 }}
         >
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '1.5rem' }}>
-            Your Data Tells <br/><span className="text-gradient">Your Story.</span>
+            Data Defines <br/><span className="text-gradient">Positioning.</span>
           </h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '500px', opacity: 0.7 }}>
-            Behind every metric is a human connection. By aggregating and analyzing your digital footprint, you unlock patterns that define your personal brand and market positioning. 
+            Patterns in engagement data reveal behavioral trends, audience response, and visibility dynamics. These metrics collectively define digital positioning.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', cursor: 'pointer', color: 'var(--brand-pink)', fontWeight: 800, transition: 'all 0.2s', textShadow: '0 0 10px rgba(236,72,153,0.5)' }} onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateX(10px)' }} onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--brand-pink)'; e.currentTarget.style.transform = 'translateX(0)' }}>
-            Explore Profile Analytics
+            Access Full Evaluation
             <ArrowRight size={20} />
           </div>
         </div>

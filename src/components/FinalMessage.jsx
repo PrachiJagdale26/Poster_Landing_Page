@@ -30,12 +30,12 @@ const FinalMessage = () => {
           <span 
             className={`transition-all duration-1000 ease-out-expo ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x--100'}`}
           >
-            Build Your
+            Interpret Your
           </span>
           <span 
             className={`text-gradient transition-all duration-1000 ease-out-expo ${isVisible ? 'opacity-100 translate-x-0 merge-glow visible' : 'opacity-0 translate-x-100'}`}
           >
-            Digital Value
+            Digital Metrics
           </span>
         </h1>
         
@@ -48,7 +48,7 @@ const FinalMessage = () => {
             marginBottom: '3rem'
           }}
         >
-          Use data. Create impact. Grow intentionally.
+          Analyze engagement patterns to understand influence, reach, and audience behavior.
         </p>
 
         <button 
@@ -65,7 +65,7 @@ const FinalMessage = () => {
           onMouseEnter={(e) => { e.currentTarget.classList.add('primary-focal-glow'); e.currentTarget.style.transform = 'scale(1.05) translateY(-5px)'; }}
           onMouseLeave={(e) => { e.currentTarget.classList.remove('primary-focal-glow'); e.currentTarget.style.transform = 'scale(1) translateY(0)'; }}
         >
-          Start Optimizing
+          Access Full Analysis
         </button>
 
       </div>

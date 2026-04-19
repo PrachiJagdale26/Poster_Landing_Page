@@ -81,7 +81,7 @@ const Hero = () => {
         }}
       >
         <div style={{ display: 'inline-flex', background: 'rgba(236, 72, 153, 0.1)', color: 'var(--brand-pink)', padding: '0.25rem 1rem', borderRadius: '50px', fontSize: '1rem', fontWeight: 600, marginBottom: '2rem', transform: 'translateZ(10px)' }}>
-          New Digital Asset Paradigm
+          Accumulated Reach Value
         </div>
 
         <h1 
@@ -107,7 +107,7 @@ const Hero = () => {
             transform: 'translateZ(30px)' 
           }}
         >
-          Turn Attention into Opportunity
+          Quantifying Attention as Digital Value
         </h2>
         
         <p style={{
@@ -118,8 +118,8 @@ const Hero = () => {
           margin: '0 auto',
           transform: 'translateZ(15px)'
         }}>
-          Views, likes, and followers are the new digital currency. 
-          Leverage your audience to build trust and generate real-world business impact.
+          Views, likes, and engagement function as measurable indicators of digital influence. 
+          This system translates audience interaction into structured value.
         </p>
 
         <div style={{ marginTop: '3.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', transform: 'translateZ(25px)' }}>
@@ -153,12 +153,12 @@ const Hero = () => {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1rem' }}>
                 <div style={{ textAlign: 'left' }}>
-                  <h2 style={{ fontSize: '1.8rem', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Growth Trajectory</h2>
-                  <p style={{ color: 'var(--text-secondary)', opacity: 0.8, fontSize: '0.9rem' }}>Projected Account Evaluation</p>
+                  <h2 style={{ fontSize: '1.8rem', marginBottom: '0.25rem', color: 'var(--text-primary)' }}>System Growth Trajectory</h2>
+                  <p style={{ color: 'var(--text-secondary)', opacity: 0.8, fontSize: '0.9rem' }}>Engagement Value Index Fluctuation</p>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginBottom: '0.25rem', opacity: 0.8 }}>Annual Performance</div>
-                  <div className="text-gradient primary-focal-glow" style={{ fontSize: '1.5rem', fontWeight: 800 }}>+1,900%</div>
+                  <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginBottom: '0.25rem', opacity: 0.8 }}>Annual Differential</div>
+                  <div className="text-gradient primary-focal-glow" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Above Baseline</div>
                 </div>
               </div>
               <div style={{ flex: 1, position: 'relative' }}>
@@ -178,7 +178,7 @@ const Hero = () => {
               boxShadow: '0 10px 25px rgba(236, 72, 153, 0.3)',
               transition: 'all 0.2s',
             }}>
-              Analyze Value
+              View Data Breakdown
             </button>
           </div>
         </div>

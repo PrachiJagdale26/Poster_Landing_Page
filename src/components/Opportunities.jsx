@@ -6,9 +6,9 @@ const Opportunities = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   const categories = [
-    { title: 'Brand Partnerships', desc: 'Monetize your audience through high-value collaborations.', icon: Handshake },
-    { title: 'Business Growth', desc: 'Convert followers into customers to scale revenue organically.', icon: TrendingUp },
-    { title: 'Strategic Networking', desc: 'Command authority to attract industry-leading talent and investors.', icon: Briefcase }
+    { title: 'Collaboration Potential', desc: 'High interaction volume mathematically correlates with increased multi-party integration.', icon: Handshake },
+    { title: 'Conversion Outcomes', desc: 'Predictive audience modeling translates sustained digital exposure into measurable value.', icon: TrendingUp },
+    { title: 'Network Influence', desc: 'Consistent metric outperformance generates quantifiable structural authority within systems.', icon: Briefcase }
   ];
 
   return (
@@ -18,10 +18,10 @@ const Opportunities = () => {
         style={{ textAlign: 'center', marginBottom: '4rem', zIndex: 10, maxWidth: '800px' }}
       >
         <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', marginBottom: '1rem', lineHeight: 1.1 }}>
-          Turn Visibility into <br/><span className="text-gradient">Real Opportunities</span>
+          Applications of <br/><span className="text-gradient">Measured Digital Value</span>
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.6, opacity: 0.7 }}>
-          Capitalize on your digital presence. High engagement unlocks tangible, real-world business advantages.
+          Translating systemic engagement metrics into functional output applications.
         </p>
       </div>
 
