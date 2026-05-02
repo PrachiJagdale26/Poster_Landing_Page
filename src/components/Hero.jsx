@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useMouseParallax } from '../hooks/useMouseParallax';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Filler } from 'chart.js';
 import { Line } from 'react-chartjs-2';
@@ -7,7 +8,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 const Hero = () => {
   const [viewCount, setViewCount] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const targetCount = 1164528;
   const parallaxOffset = useMouseParallax(15);
   const bgParallaxOffset = useMouseParallax(-10);
@@ -68,9 +69,13 @@ const Hero = () => {
 
   return (
     <section className="screen-section perspective-container">
-      {/* Background glow for Social feel with opposite parallax adapted for light mode */}
-      <div className="glow-bg" style={{ top: '-10%', right: '-10%', transform: `translate(${bgParallaxOffset.x}px, ${bgParallaxOffset.y}px)`, transition: 'transform 0.1s ease-out', background: 'radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(255, 255, 255, 0) 70%)' }} />
-      <div className="glow-bg" style={{ bottom: '-20%', left: '-20%', transform: `translate(${bgParallaxOffset.x}px, ${bgParallaxOffset.y}px)`, transition: 'transform 0.1s ease-out', background: 'radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, rgba(255, 255, 255, 0) 70%)' }} />
+      <div className="glow-bg" style={{ top: '-10%', right: '-10%', transform: `translate(${bgParallaxOffset.x}px, ${bgParallaxOffset.y}px)`, transition: 'transform 0.1s ease-out' }} />
+      <div className="glow-bg" style={{ bottom: '-20%', left: '-20%', transform: `translate(${bgParallaxOffset.x}px, ${bgParallaxOffset.y}px)`, transition: 'transform 0.1s ease-out' }} />
+      
+      {/* Central massive radial glow for number */}
+      <div className="glow-bg" style={{ top: '50%', left: '50%', transform: `translate(-50%, -50%) translate(${bgParallaxOffset.x * 0.5}px, ${bgParallaxOffset.y * 0.5}px)`, width: '800px', height: '800px' }} />
+
+      {/* Data particles removed for light theme */}
 
       <div 
         className="fade-in-up floating" 
@@ -80,76 +85,143 @@ const Hero = () => {
           transition: 'transform 0.1s ease-out'
         }}
       >
-        <div style={{ display: 'inline-flex', background: 'rgba(236, 72, 153, 0.1)', color: 'var(--brand-pink)', padding: '0.25rem 1rem', borderRadius: '50px', fontSize: '1rem', fontWeight: 600, marginBottom: '2rem', transform: 'translateZ(10px)' }}>
-          Accumulated Reach Value
-        </div>
-
         <h1 
-          className="text-gradient primary-focal-glow"
           style={{ 
-            fontSize: 'clamp(4rem, 9vw, 8rem)', 
-            fontWeight: 900,
-            lineHeight: 1,
-            margin: '0 0 1.5rem 0',
-            letterSpacing: '-3px',
-          }}
-        >
-          {viewCount.toLocaleString()} <span style={{ color: 'var(--text-primary)', WebkitTextFillColor: 'initial', fontWeight: 800 }}>Views</span>
-        </h1>
-        
-        <h2 
-          style={{ 
-            fontSize: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
             color: 'var(--text-primary)',
-            fontWeight: 600,
-            marginBottom: '1.5rem',
-            letterSpacing: '-0.5px',
+            fontWeight: 800,
+            marginBottom: '1rem',
+            letterSpacing: '-1px',
             transform: 'translateZ(30px)' 
           }}
         >
-          Quantifying Attention as Digital Value
+          Evaluate Your Digital Value
+        </h1>
+
+        <h2 
+          style={{ 
+            fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
+            color: 'var(--text-secondary)',
+            fontWeight: 600,
+            marginBottom: '2.5rem',
+            transform: 'translateZ(30px)' 
+          }}
+        >
+          Analyze how views, likes, and engagement translate into measurable influence and performance.
         </h2>
+
+        <div style={{ display: 'inline-flex', background: 'rgba(236, 72, 153, 0.1)', color: 'var(--brand-pink)', padding: '0.25rem 1rem', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1rem', transform: 'translateZ(10px)' }}>
+          Your Current Value Score
+        </div>
+
+        <div 
+          className="text-gradient hover-3d"
+          style={{ 
+            fontSize: 'clamp(3.5rem, 7vw, 6rem)', 
+            fontWeight: 900,
+            lineHeight: 1,
+            margin: '0 0 1.5rem 0',
+            letterSpacing: '-2px',
+            transform: 'translateZ(20px)',
+            cursor: 'default'
+          }}
+        >
+          <span className="number-glow">{viewCount.toLocaleString()}</span> <span style={{ color: 'var(--text-primary)', WebkitTextFillColor: 'initial', fontWeight: 800, fontSize: '0.7em', opacity: 0.9 }}>Views</span>
+        </div>
         
         <p style={{
-          fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+          fontSize: 'clamp(1.1rem, 1.8vw, 1.25rem)',
           color: 'var(--text-secondary)',
           lineHeight: 1.6,
           maxWidth: '700px',
+          margin: '0 auto 0.5rem auto',
+          transform: 'translateZ(15px)'
+        }}>
+          This tool helps you understand your standing through structured metrics, validation scores, and identity indicators.
+        </p>
+
+        <p style={{
+          fontSize: '0.95rem',
+          color: 'var(--text-secondary)',
+          opacity: 0.8,
+          lineHeight: 1.6,
+          maxWidth: '600px',
           margin: '0 auto',
           transform: 'translateZ(15px)'
         }}>
-          Views, likes, and engagement function as measurable indicators of digital influence. 
-          This system translates audience interaction into structured value.
+          Use this system to track performance, compare engagement, and interpret your digital presence.
         </p>
 
         <div style={{ marginTop: '3.5rem', display: 'flex', gap: '1rem', justifyContent: 'center', transform: 'translateZ(25px)' }}>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <button 
+              className="hover-3d"
+              onClick={() => setIsPopupOpen(true)}
+              onMouseEnter={(e) => { 
+                setIsPopupOpen(true);
+                e.currentTarget.style.boxShadow = '0 15px 35px rgba(59, 130, 246, 0.4)'; 
+                e.currentTarget.style.transform = 'translateZ(30px) scale(1.02)'; 
+              }}
+              onMouseLeave={(e) => { 
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(59, 130, 246, 0.3)'; 
+                e.currentTarget.style.transform = 'translateZ(20px) scale(1)'; 
+              }}
+              style={{
+                padding: '1.25rem 3rem',
+                borderRadius: '50px',
+                background: 'linear-gradient(to right, var(--brand-blue), var(--brand-purple))',
+                color: '#fff',
+                border: 'none',
+                fontSize: '1.2rem',
+                fontWeight: 800,
+                cursor: 'pointer',
+                boxShadow: '0 10px 25px rgba(59, 130, 246, 0.3)',
+                transform: 'translateZ(20px)'
+              }}
+            >
+              Start Evaluation
+            </button>
+          </div>
+        </div>
+
+        {/* Modal Overlay via Portal to escape transform context */}
+        {isPopupOpen && createPortal(
           <div 
-            style={{ position: 'relative', display: 'inline-block' }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              background: 'rgba(0, 0, 0, 0.4)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              animation: 'fadeIn 0.3s ease-out'
+            }}
+            onClick={() => setIsPopupOpen(false)}
           >
-            {/* MASSIVE Graph Pop Up */}
+            {/* Modal Content */}
             <div 
               style={{
-                position: 'absolute',
-                bottom: '100%',
-                left: '50%',
-                transform: `translateX(-50%) translateY(${isHovered ? '-20px' : '0px'}) scale(${isHovered ? 1 : 0.9})`,
-                opacity: isHovered ? 1 : 0,
-                visibility: isHovered ? 'visible' : 'hidden',
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                width: '800px', 
+                width: '90%',
+                maxWidth: '800px', 
                 height: '450px',
                 padding: '2rem',
-                background: '#ffffff', // Solid white background, stripping glass-morphism
-                border: '1px solid var(--surface-border)',
+                background: '#FFFFFF',
                 borderRadius: '24px',
-                boxShadow: '0 30px 60px rgba(0,0,0,0.15)',
-                pointerEvents: 'none',
-                zIndex: 50,
+                boxShadow: '0px 20px 40px rgba(0,0,0,0.15)',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                zIndex: 10000,
+                position: 'relative',
+                transformStyle: 'flat',
+                animation: 'scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
               }}
+              onClick={(e) => e.stopPropagation()}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '1rem' }}>
                 <div style={{ textAlign: 'left' }}>
@@ -158,30 +230,16 @@ const Hero = () => {
                 </div>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', marginBottom: '0.25rem', opacity: 0.8 }}>Annual Differential</div>
-                  <div className="text-gradient primary-focal-glow" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Above Baseline</div>
+                  <div className="text-gradient" style={{ fontSize: '1.5rem', fontWeight: 800 }}>Above Baseline</div>
                 </div>
               </div>
               <div style={{ flex: 1, position: 'relative' }}>
                  <Line data={lineData} options={chartOptions} />
               </div>
             </div>
-
-            <button style={{
-              padding: '1.25rem 3rem',
-              borderRadius: '50px',
-              background: 'linear-gradient(to right, var(--brand-pink), var(--brand-orange))',
-              color: '#fff',
-              border: 'none',
-              fontSize: '1.2rem',
-              fontWeight: 800,
-              cursor: 'pointer',
-              boxShadow: '0 10px 25px rgba(236, 72, 153, 0.3)',
-              transition: 'all 0.2s',
-            }}>
-              View Data Breakdown
-            </button>
-          </div>
-        </div>
+          </div>,
+          document.body
+        )}
       </div>
     </section>
   );

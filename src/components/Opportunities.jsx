@@ -6,9 +6,9 @@ const Opportunities = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   const categories = [
-    { title: 'Collaboration Potential', desc: 'High interaction volume mathematically correlates with increased multi-party integration.', icon: Handshake },
-    { title: 'Conversion Outcomes', desc: 'Predictive audience modeling translates sustained digital exposure into measurable value.', icon: TrendingUp },
-    { title: 'Network Influence', desc: 'Consistent metric outperformance generates quantifiable structural authority within systems.', icon: Briefcase }
+    { title: 'Collaboration Potential', desc: 'Higher engagement increases opportunities for partnerships.', icon: Handshake },
+    { title: 'Conversion Outcomes', desc: 'Audience interaction influences measurable outcomes such as conversions.', icon: TrendingUp },
+    { title: 'Network Influence', desc: 'Stronger engagement improves visibility within your network.', icon: Briefcase }
   ];
 
   return (
@@ -18,7 +18,7 @@ const Opportunities = () => {
         style={{ textAlign: 'center', marginBottom: '4rem', zIndex: 10, maxWidth: '800px' }}
       >
         <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', marginBottom: '1rem', lineHeight: 1.1 }}>
-          Applications of <br/><span className="text-gradient">Measured Digital Value</span>
+          How Your Metrics <br/><span className="text-gradient">Translate into Outcomes</span>
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', lineHeight: 1.6, opacity: 0.7 }}>
           Translating systemic engagement metrics into functional output applications.
@@ -32,23 +32,24 @@ const Opportunities = () => {
             <div 
               key={i} 
               className={`glass-panel hover-3d transition-all duration-700 ease-out-expo delay-${(i+1)*100} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} 
-              style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '2.5rem', transformStyle: 'preserve-3d' }}
-              onMouseEnter={(e) => { e.currentTarget.classList.add('primary-focal-glow'); }}
-              onMouseLeave={(e) => { e.currentTarget.classList.remove('primary-focal-glow'); }}
+              style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '2.5rem', transformStyle: 'preserve-3d', background: '#ffffff', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}
             >
               <div 
-                className="extruded-icon"
                 style={{ 
-                  width: '66px', // Scaled up +10% per plan
+                  width: '66px', 
                   height: '66px', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
                   marginBottom: '1.5rem',
-                  transform: 'translateZ(30px)' // Pops out
+                  transform: 'translateZ(40px)',
+                  background: 'linear-gradient(135deg, #ffffff, #f3f4f6)',
+                  borderRadius: '16px',
+                  border: '1px solid var(--surface-border)',
+                  boxShadow: '5px 5px 15px rgba(0,0,0,0.05), -2px -2px 10px rgba(255,255,255,1)'
                 }}
               >
-                <Icon size={32} className="text-gradient" />
+                <Icon size={32} color="var(--brand-blue)" />
               </div>
               <h3 style={{ fontSize: '1.6rem', marginBottom: '0.75rem', transform: 'translateZ(20px)' }}>{cat.title}</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, transform: 'translateZ(10px)', opacity: 0.8 }}>{cat.desc}</p>
